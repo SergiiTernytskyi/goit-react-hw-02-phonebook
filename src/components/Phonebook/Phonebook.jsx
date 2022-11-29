@@ -1,44 +1,52 @@
+import { nanoid } from 'nanoid';
 import { Component } from 'react';
+import { Button } from './Button/Button';
+import { NameForm } from './NameForm/NameForm';
+import { NumberForm } from './NumberForm/NumberForm';
+import { Form } from './Phonebook.styled';
 
 export class Phonebook extends Component {
   state = {
     name: '',
+    number: '',
   };
 
   inputChangeHandler = event => {
-    this.setState({ name: event.currentTarget.value });
+    const { name, value } = event.currentTarget;
+    this.setState({ [name]: value });
   };
 
   submitHandler = event => {
     event.preventDefault();
 
-    this.props.onSubmit(this.state.name);
+    this.props.onSubmit(this.state);
     this.reset();
   };
 
   reset = () => {
-    this.setState({ name: '' });
+    this.setState({ name: '', number: '' });
   };
 
   render() {
-    return (
-      <>
-        <h2>Phonebook</h2>
-        <form onSubmit={this.submitHandler}>
-          <label htmlFor="">Name</label>
-          <input
-            type="text"
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-            value={this.state.name}
-            onChange={this.inputChangeHandler}
-          />
+    const nameId = nanoid();
+    const phoneId = nanoid();
 
-          <button type="submit">Add contact</button>
-        </form>
-      </>
+    return (
+      <Form onSubmit={this.submitHandler}>
+        <NameForm
+          id={nameId}
+          value={this.state.name}
+          onChange={this.inputChangeHandler}
+        />
+
+        <NumberForm
+          id={phoneId}
+          value={this.state.number}
+          onChange={this.inputChangeHandler}
+        />
+
+        <Button title="Add contact" />
+      </Form>
     );
   }
 }
