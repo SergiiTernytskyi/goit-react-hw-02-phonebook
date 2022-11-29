@@ -8,8 +8,9 @@ export const Card = styled.section`
     margin-bottom: 12px;
   }
 
-  background-color: #b1c8dd;
+  background-color: #e2ebf3;
   border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 `;
 
 export const Title = styled.h2`

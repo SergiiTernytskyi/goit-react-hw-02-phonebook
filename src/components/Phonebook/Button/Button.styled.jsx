@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const SubmitButton = styled.button`
   align-self: center;
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
 
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
   text-transform: capitalize;

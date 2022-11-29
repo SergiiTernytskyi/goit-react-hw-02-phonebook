@@ -19,7 +19,7 @@ export const Input = styled.input`
   font-weight: 400;
   line-height: 1.5;
 
-  background-color: #b1c8dd;
+  background-color: #e2ebf3;
   color: #728697;
   border: 1px solid #728697;
   border-radius: 12px;
