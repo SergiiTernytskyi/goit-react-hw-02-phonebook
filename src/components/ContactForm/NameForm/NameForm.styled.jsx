@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
-
-export const FilterLabel = styled.label`
+export const Label = styled.label`
   margin-bottom: 4px;
 
   font-size: 18px;
@@ -16,9 +10,9 @@ export const FilterLabel = styled.label`
   color: #515e69;
 `;
 
-export const FilterInput = styled.input`
+export const Input = styled.input`
   padding: 6px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   width: 100%;
 
   font-size: 18px;
@@ -33,5 +27,6 @@ export const FilterInput = styled.input`
   :hover,
   :focus {
     border: 1px solid #ea4f16;
+    outline-color: #ea4f16;
   }
 `;

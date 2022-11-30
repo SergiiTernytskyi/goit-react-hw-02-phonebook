@@ -27,5 +27,6 @@ export const Input = styled.input`
   :hover,
   :focus {
     border: 1px solid #ea4f16;
+    outline-color: #ea4f16;
   }
 `;

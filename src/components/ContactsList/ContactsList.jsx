@@ -1,13 +1,23 @@
 import PropTypes from 'prop-types';
-import { Contact, List } from './ContactsList.styled';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
-export const ContactsList = ({ contacts }) => {
+import { Contact, DeleteButton, List } from './ContactsList.styled';
+
+export const ContactsList = ({ contacts, onDeleteContact }) => {
   return (
     <List>
-      {contacts.map(contact => {
+      {contacts.map(({ id, name, number }) => {
         return (
-          <Contact key={contact.id}>
-            {contact.name}: {contact.number}
+          <Contact key={id}>
+            {name}: {number}{' '}
+            <DeleteButton
+              type="button"
+              onClick={() => {
+                onDeleteContact(id);
+              }}
+            >
+              <FaRegTrashAlt size={25} />
+            </DeleteButton>
           </Contact>
         );
       })}

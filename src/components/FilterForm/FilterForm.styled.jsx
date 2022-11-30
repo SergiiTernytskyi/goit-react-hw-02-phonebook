@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
-export const Label = styled.label`
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const FilterLabel = styled.label`
   margin-bottom: 4px;
 
   font-size: 18px;
@@ -10,9 +16,9 @@ export const Label = styled.label`
   color: #515e69;
 `;
 
-export const Input = styled.input`
+export const FilterInput = styled.input`
   padding: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   width: 100%;
 
   font-size: 18px;
@@ -27,5 +33,6 @@ export const Input = styled.input`
   :hover,
   :focus {
     border: 1px solid #ea4f16;
+    outline-color: #ea4f16;
   }
 `;
