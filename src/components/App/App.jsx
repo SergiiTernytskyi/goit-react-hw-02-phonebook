@@ -8,7 +8,7 @@ import { Container } from './App.styled';
 import { Section } from 'components/Section/Section';
 import { FilterForm } from 'components/FilterForm/FilterForm';
 
-import { showWarningMessage } from '../../utils/warningMessage';
+// import { showWarningMessage } from '../../utils/warningMessage';
 
 export class App extends Component {
   state = {
