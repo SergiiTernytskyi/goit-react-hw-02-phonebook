@@ -2,9 +2,9 @@ import { Notify } from 'notiflix';
 
 const notifyOptions = {
   position: 'center-top',
-  fontSize: '18px',
+  fontSize: '16px',
   clickToClose: true,
-  width: '200px',
+  width: '350px',
   timeout: 5000,
 };
 
