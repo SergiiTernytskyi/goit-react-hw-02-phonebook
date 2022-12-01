@@ -1,24 +1,22 @@
 import styled from 'styled-components';
 
-// #b1c8dd
-
 export const Card = styled.section`
   padding: 30px 15px;
   :not(:last-child) {
-    margin-bottom: 12px;
+    margin-bottom: ${props => props.theme.space[5]}px;
   }
 
-  background-color: #e2ebf3;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: ${props => props.theme.colors.primary};
+  border-radius: ${props => props.theme.radii.normal};
+  box-shadow: ${props => props.theme.shadows.third};
 `;
 
 export const Title = styled.h2`
-  margin-bottom: 16px;
+  margin-bottom: ${props => props.theme.space[5]}px;
 
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1.5;
+  font-size: ${props => props.theme.fontSizes.xxl}px;
+  font-weight: ${props => props.theme.fontWeights.bold};
+  line-height: ${props => props.theme.lineHeights.body};
 
-  color: #515e69;
+  color: ${props => props.theme.colors.secondary};
 `;
