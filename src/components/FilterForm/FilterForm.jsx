@@ -19,4 +19,6 @@ export const FilterForm = ({ title, value, onChange }) => {
 
 FilterForm.propTypes = {
   title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
