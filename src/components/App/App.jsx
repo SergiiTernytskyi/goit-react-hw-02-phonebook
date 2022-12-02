@@ -8,8 +8,6 @@ import { Container } from './App.styled';
 import { Section } from 'components/Section/Section';
 import { FilterForm } from 'components/FilterForm/FilterForm';
 
-import { showWarningMessage } from '../../utils/warningMessage';
-
 export class App extends Component {
   state = {
     contacts: [],
@@ -24,13 +22,6 @@ export class App extends Component {
     };
 
     this.setState(({ contacts }) => {
-      if (
-        contacts.find(
-          elem => elem.name.toLowerCase() === contact.name.toLowerCase()
-        )
-      ) {
-        return showWarningMessage(name);
-      }
       return {
         contacts: [contact, ...contacts],
       };
@@ -66,7 +57,7 @@ export class App extends Component {
         <GlobalStyle />
 
         <Section title="Phonebook">
-          <ContactForm onSubmit={this.addContact} />
+          <ContactForm onSubmit={this.addContact} contacts={contacts} />
         </Section>
 
         {contacts.length > 0 && (

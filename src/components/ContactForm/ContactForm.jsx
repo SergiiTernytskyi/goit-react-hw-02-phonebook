@@ -7,6 +7,8 @@ import { NameForm } from './NameForm/NameForm';
 import { NumberForm } from './NumberForm/NumberForm';
 import { Form } from './ContactForm.styled';
 
+import { showWarningMessage } from '../../utils/warningMessage';
+
 export class ContactForm extends Component {
   static propTypes = { onSubmit: PropTypes.func.isRequired };
 
@@ -22,8 +24,16 @@ export class ContactForm extends Component {
 
   submitHandler = event => {
     event.preventDefault();
+    const { value } = event.currentTarget.name;
+    const { contacts, onSubmit } = this.props;
 
-    this.props.onSubmit(this.state);
+    if (
+      contacts.find(elem => elem.name.toLowerCase() === value.toLowerCase())
+    ) {
+      return showWarningMessage(value);
+    }
+
+    onSubmit(this.state);
     this.reset();
   };
 
