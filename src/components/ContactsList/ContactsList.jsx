@@ -1,24 +1,20 @@
+import { ContactItem } from 'components/ContactItem/ContactItem';
 import PropTypes from 'prop-types';
-import { FaRegTrashAlt } from 'react-icons/fa';
 
-import { Contact, DeleteButton, List } from './ContactsList.styled';
+import { List } from './ContactsList.styled';
 
-export const ContactsList = ({ contacts, onDeleteContact }) => {
+export const ContactsList = ({ contacts, onDelete }) => {
   return (
     <List>
       {contacts.map(({ id, name, number }) => {
         return (
-          <Contact key={id}>
-            {name}: {number}{' '}
-            <DeleteButton
-              type="button"
-              onClick={() => {
-                onDeleteContact(id);
-              }}
-            >
-              <FaRegTrashAlt size={25} />
-            </DeleteButton>
-          </Contact>
+          <ContactItem
+            key={id}
+            id={id}
+            name={name}
+            number={number}
+            onDelete={onDelete}
+          />
         );
       })}
     </List>
@@ -26,6 +22,12 @@ export const ContactsList = ({ contacts, onDeleteContact }) => {
 };
 
 ContactsList.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  onDeleteContact: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string,
+      number: PropTypes.string,
+      onDelete: PropTypes.func,
+    })
+  ).isRequired,
 };

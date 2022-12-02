@@ -69,7 +69,7 @@ export class App extends Component {
           <ContactForm onSubmit={this.addContact} />
         </Section>
 
-        {contacts.length !== 0 && (
+        {contacts.length > 0 && (
           <Section title="Contacts">
             <FilterForm
               title="Find contacts by name"
@@ -78,7 +78,7 @@ export class App extends Component {
             />
             <ContactsList
               contacts={filteredContacts}
-              onDeleteContact={this.deleteContact}
+              onDelete={this.deleteContact}
             />
           </Section>
         )}
