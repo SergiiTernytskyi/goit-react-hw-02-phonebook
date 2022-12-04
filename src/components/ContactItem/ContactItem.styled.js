@@ -21,7 +21,7 @@ export const Contact = styled.li`
   box-shadow: ${props => props.theme.shadows.third}px;
 `;
 
-export const DeleteButton = styled.button`
+export const IconButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

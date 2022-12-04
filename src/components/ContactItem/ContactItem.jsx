@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
 import { FaRegTrashAlt } from 'react-icons/fa';
-import { Contact, DeleteButton } from './ContactItem.styled';
+import { Contact, IconButton } from './ContactItem.styled';
 
 export const ContactItem = ({ id, name, number, onDelete }) => {
   return (
     <Contact>
-      {name}: {number}{' '}
-      <DeleteButton
+      {name}: {number}
+      <IconButton
         type="button"
+        aria-label="delete"
         onClick={() => {
           onDelete(id);
         }}
       >
         <FaRegTrashAlt size={25} />
-      </DeleteButton>
+      </IconButton>
     </Contact>
   );
 };
